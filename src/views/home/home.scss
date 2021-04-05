@@ -1,0 +1,10 @@
+.home {
+    width: 100%;
+    min-height: 50vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--light-2);
+    border-radius: 15px;
+}

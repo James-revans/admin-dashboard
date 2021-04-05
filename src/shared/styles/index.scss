@@ -1,0 +1,13 @@
+@import 'lib/bootstrap/bootstrap';
+
+@import "variables";
+@import "containers";
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-image: var(--gradient-background);
+  color: var(--color-text);
+  font-family: var(--font-family);
+}
