@@ -1,7 +1,7 @@
 import React from "react";
 import { useService } from "@xstate/react";
 import { service } from "../../shared/service.js";
-import Employees from "../../employees/Employees.component";
+import Employees from "./employees/Employees.component";
 import "./home.scss";
 
 const Home = () => {

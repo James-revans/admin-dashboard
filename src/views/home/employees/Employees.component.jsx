@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useService } from "@xstate/react";
-import { service } from "../shared/service.js";
-import Employee from "../shared/components/employee/Employee";
+import { service } from "../../../shared/service.js";
+import Employee from "../../../shared/components/employee/Employee";
 import "./employees.scss";
 
 const Employees = () => {

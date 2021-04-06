@@ -4,7 +4,7 @@ const mockFetch = () => {
     return new Promise(res => {
         setTimeout(() => {
             res(employees);
-        }, 0);
+        }, 500);
     });
 }
 

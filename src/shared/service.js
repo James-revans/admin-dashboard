@@ -22,13 +22,10 @@ const modifiedConfig = {
 
 const machine = Machine(modifiedConfig, {services});
 const service = interpret(machine)
-    .onTransition(state => {
-        console.log(state);
-    })
     .start();
 
 let _cacheTree = null;
-const createTree = new ComponentTree(service, (treeValue) => {
+new ComponentTree(service, (treeValue) => {
     if (JSON.stringify(_cacheTree) === JSON.stringify({ ...treeValue})) {
         return;
     } else {
