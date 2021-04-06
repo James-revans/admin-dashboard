@@ -56,3 +56,4 @@ To close the modal, all you need to do is send the `"MODAL_CLOSE"` event: https:
 Testing with Jest\
 Routing with url params setup for each modal popup\
 Animations for each employee card\
+Make use of the loading state that is already setup
