@@ -27,7 +27,34 @@ Aside from that I setup some custom base styles found in https://github.com/Jame
 I leveraged xstate to manage state across the app. This manages rendering the views, modal popups, and tracking global state.
 xstate is a state machine library https://xstate.js.org/docs/ that helps to visualize the flow of your app better, and to make each state bulletproof. The configs for this can be found here: https://github.com/James-revans/admin-dashboard/tree/master/src/shared/machines
 
-A good example of how this works can be seen in the modal state machine.
+### Example state machine showing a promise resolve
+This is straight from the xstate docs here: https://xstate.js.org/docs/guides/start.html
+As you can see, you can follow the state tree through the lifecycle of a promise. 
+
+```JavaScript
+import { Machine } from 'xstate';
+
+const promiseMachine = Machine({
+  id: 'promise',
+  initial: 'pending',
+  states: {
+    pending: {
+      on: {
+        RESOLVE: 'resolved',
+        REJECT: 'rejected'
+      }
+    },
+    resolved: {
+      type: 'final'
+    },
+    rejected: {
+      type: 'final'
+    }
+  }
+});
+
+```
+
 
 ## Modals
 I setup a system for invoking modals on the page. This can be seen here: https://github.com/James-revans/admin-dashboard/blob/master/src/shared/machines/modal.partial.js
