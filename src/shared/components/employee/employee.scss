@@ -2,14 +2,14 @@
     --vertical-slide: -15px;
     --slide-time: 0.2s;
 
-    background-color: var(--light-2);
+    background-color: var(--light-1);
 
     &__img {
         width: 5rem;
         height: 5rem;
         border-radius: 100%;
+        object-fit: cover;
     }
-    border: solid 3px var(--light-3);
     width: 10rem;
     border-radius: 20px;
     transition: var(--slide-time);

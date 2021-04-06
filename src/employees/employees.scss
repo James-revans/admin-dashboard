@@ -1,0 +1,11 @@
+@import "../shared//styles/mixins";
+
+.employees {
+    justify-content: center;
+}
+
+@include media-breakpoint-up(sm) {
+    .employees {
+        justify-content: space-between;
+    }
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { service } from "../../../shared/service";
 import { useService } from "@xstate/react";
 
@@ -7,6 +7,9 @@ import "./employee.scss";
 const Employee = ({info, index}) => {
     const [state, send] = useService(service);
     const {name, image, department, location} = info;
+
+    useEffect(() => {
+    }, [info])
 
     const openDetails = () => {
         send({

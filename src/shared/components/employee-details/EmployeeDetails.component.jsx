@@ -8,6 +8,7 @@ const EmployeeDetails = ({info, index = null, type}) => {
     const [state, send] = useService(service);
     const [employeeData, setEmployeeData] = useState();
     const [details, setDetails] = useState(info);
+    const [showWarning, setShowWarning] = useState(false);
 
     useEffect(() => {
         if(employeeData) {
@@ -22,11 +23,13 @@ const EmployeeDetails = ({info, index = null, type}) => {
         }
     }, [employeeData]);
 
-    useEffect(() => {
-        console.log(details.department);
-    }, [details])
-
     const buildEmployeeData = () => {
+        for (const val in details) {
+            if (!details[val]) {
+                setShowWarning(true) 
+                return;
+            }
+        }
         setEmployeeData({
             ...details, 
             department: `${details.department}_${details.location}`
@@ -37,22 +40,21 @@ const EmployeeDetails = ({info, index = null, type}) => {
         let reader = new FileReader();
 
         reader.onload = function (e) {
-            localStorage.setItem("imgData", e.target.result);
             setDetails({
                 ...details,
-                image: localStorage.getItem("imgData")
+                image: e.target.result
             })
         }
-        reader.readAsDataURL(document.getElementById("img-input").files[0]);
+        reader.readAsDataURL(document.getElementById("img").files[0]);
     }
 
     return (
-        <div className="d-flex flex-column">
+        <div className="d-flex flex-column employee-details">
             <label for="img">Select image
-                <input type="file" className="cursor-pointer form-control mb-4" id="img-input" name="image" accept="image/*" onChange={uploadImage}></input>
-                <img src={details.image} id="employee-img" className="employee-details__img rounded"/>
+                <input type="file" className="cursor-pointer form-control mb-4" id="img" name="image" accept="image/*" onChange={uploadImage}></input>
             </label>
-            
+            <img src={details.image} id="employee-img" className="employee-details__img rounded"/>
+
             <label className="mt-4">
                 Username:
                 <input name="name" className="form-control mb-4" type="text" placeholder="Username" value={details.name} onChange={(e) => setDetails({...details, name: e.target.value})} />
@@ -86,6 +88,11 @@ const EmployeeDetails = ({info, index = null, type}) => {
                     <option value="Mumbai">Mumbai</option>
                 </select>
             </label>
+            {showWarning &&
+                <div className="employee-details__warning">
+                    <p>Please fill out all fields before saving!</p>
+                </div>
+            }
             <div className="d-flex justify-content-between w-100">
                 <button className="btn btn-primary" onClick={buildEmployeeData}>Save Employee</button>
                 <button className="btn btn-secondary" onClick={() => send("MODAL_CLOSE")}>Cancel</button>

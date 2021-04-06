@@ -39,7 +39,7 @@ const Employees = () => {
 
     useEffect(() => {
         setDisplayEmployees(filterEmployeeArr());
-    }, [checked]);
+    }, [checked, state.context.employees]);
 
     return (
         <>
@@ -61,7 +61,7 @@ const Employees = () => {
                     )
                 })}
             </div>
-            <div className="employees d-flex flex-wrap justify-content-between">
+            <div className="employees d-flex flex-wrap">
                 {displayEmployees.map((item, i) => <Employee info={item[1]} index={i}/>)}
             </div>
         </>

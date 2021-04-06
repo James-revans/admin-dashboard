@@ -9,11 +9,13 @@ const Home = () => {
 
     return (
         <div className="home p-4">
-            <div className="d-flex pb-4 justify-content-between">
+            <div className="home__title-bar d-flex pb-4 justify-content-between">
                 <h1>Employees</h1>
-                <button type="button" className="btn-sm btn-primary" onClick={() => {send("MODAL_ADD_EMPLOYEE")}}>
-                    Add Employee
-                </button>
+                <div>
+                    <button type="button" className="btn-sm btn-primary" onClick={() => {send("MODAL_ADD_EMPLOYEE")}}>
+                        Add Employee
+                    </button>
+                </div>
             </div>
             <Employees />
         </div>

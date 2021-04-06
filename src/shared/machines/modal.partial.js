@@ -59,7 +59,7 @@ export default {
                                     employees: ({ employees }, {data}) => {
                                         let modifiedEmployees = employees;
                                         modifiedEmployees[data.index] = data.info;
-                                        return modifiedEmployees;
+                                        return [...modifiedEmployees];
                                     },
                                     selectedEmployee: null
                                 }),
