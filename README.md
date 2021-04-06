@@ -1,6 +1,6 @@
 # Admin Dashboard
 
-Take-home project for fun. Demo here: https://admin-dashboard-8mbhb7ka1-jamesevans.vercel.app/
+Take-home project for fun. Demo here: https://admin-dashboard-git-master-jamesevans.vercel.app/
 
 ## Available Scripts
 
@@ -24,7 +24,7 @@ To speed up the dev process, I brought in Bootstrap for it's utility classes and
 Aside from that I setup some custom base styles found in https://github.com/James-revans/admin-dashboard/tree/master/src/shared/styles
 
 ## State
-I leveraged xstate to manage state across the app. This manages rendering the views, modal popups, and tracking global context.
+I leveraged xstate to manage state across the app. This manages rendering the views, modal popups, and tracking global state.
 xstate is a state machine library https://xstate.js.org/docs/ that helps to visualize the flow of your app better, and to make each state bulletproof. The configs for this can be found here: https://github.com/James-revans/admin-dashboard/tree/master/src/shared/machines
 
 A good example of how this works can be seen in the modal state machine.
