@@ -1,11 +1,14 @@
-@import 'lib/bootstrap/bootstrap';
+@import "../../../node_modules/bootstrap/scss/bootstrap";
 
 @import "variables";
 @import "containers";
+@import "text";
+@import "util";
 
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 
   background-image: var(--gradient-background);
   color: var(--color-text);

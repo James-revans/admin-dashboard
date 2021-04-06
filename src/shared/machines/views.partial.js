@@ -22,12 +22,15 @@ export default {
             invoke: {
                 src: "fetchData",
                 onDone: {
-                    actions: raise("HOME")
+                    actions: [
+                        assign({
+                            employees: (context, {data}) => {
+                                return data;
+                            }
+                        }),
+                        raise("HOME")
+                    ]
                 }
-            },
-
-            after: {
-                100: "home"
             },
         },
         

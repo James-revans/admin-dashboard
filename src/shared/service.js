@@ -1,6 +1,7 @@
 import { interpret, Machine, assign } from "xstate";
 import ComponentTree from "xstate-component-tree";
 import config from "./machines/main.machine";
+import services from "./services/services";
 
 const modifiedConfig = {
     ...config,
@@ -19,7 +20,7 @@ const modifiedConfig = {
     }
 }
 
-const machine = Machine(modifiedConfig);
+const machine = Machine(modifiedConfig, {services});
 const service = interpret(machine)
     .onTransition(state => {
         console.log(state);
@@ -40,4 +41,4 @@ const createTree = new ComponentTree(service, (treeValue) => {
 });
 
 const { send } = service;
-export { send, machine, service };
+export { send, service };

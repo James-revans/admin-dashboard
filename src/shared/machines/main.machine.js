@@ -8,6 +8,7 @@ export default {
 
     context: {
         employees: [],
+        selectedEmployee: null,
     },
 
     states: {

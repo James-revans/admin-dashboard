@@ -1,13 +1,18 @@
 import React from "react";
-import { send } from "../../shared/service";
+import EmployeeDetails from "../../shared/components/employee-details/EmployeeDetails.component";
 
 const EmployeeAdd = () => {
+    const defaultInfo = {
+        department: null,
+        image: "images/avatar/default.png",
+        name: null,
+        paygrade: null,
+        location: null,
+    }
+    
     return (
-        <div>
-            Add modal
-            <button onClick={() => {send("ADD_EMPLOYEE")}}>Add the new employee</button>
-        </div>
-    );
+        <EmployeeDetails info={defaultInfo} type={"ADD_EMPLOYEE"}/>
+    )
 }
 
 export default EmployeeAdd;
