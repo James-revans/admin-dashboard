@@ -1,6 +1,8 @@
 # Admin Dashboard
 
-Take-home project for fun. Demo here: https://admin-dashboard-git-master-jamesevans.vercel.app/
+Take-home project for fun. Demo here: https://admin-dashboard-git-master-jamesevans.vercel.app/ \
+Displays a list of employees and allows the user to modify the details of an employee, add a new employee, and sort by department. 
+
 
 ## Available Scripts
 
