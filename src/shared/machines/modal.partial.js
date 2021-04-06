@@ -39,9 +39,10 @@ export default {
                     },
                     on: {
                         ADD_EMPLOYEE: {
+                            // Add the new employee to our employees[] in context and then close the modal
                             actions: [
                                 assign({
-                                    employees: ({ employees }, {data}) => [...employees, data.info]
+                                    employees: ({ employees }, {data}) => [data.info, ...employees]
                                 }),
                                 raise("MODAL_CLOSE")
                             ]
@@ -54,6 +55,7 @@ export default {
                     },
                     on: {
                         UPDATE_EMPLOYEE: {
+                            // Update the data for the specified employee and then close the modal
                             actions: [
                                 assign({
                                     employees: ({ employees }, {data}) => {

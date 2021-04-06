@@ -4,7 +4,7 @@ import { useService } from "@xstate/react";
 import { useState, useEffect } from "react";
 import "./employeeDetails.scss";
 
-const EmployeeDetails = ({info, index = null, type}) => {
+const EmployeeDetails = ({info, index, type}) => {
     const [state, send] = useService(service);
     const [employeeData, setEmployeeData] = useState();
     const [details, setDetails] = useState(info);
@@ -23,6 +23,7 @@ const EmployeeDetails = ({info, index = null, type}) => {
         }
     }, [employeeData]);
 
+    // Checking to ensure all inputs aren't null. Updating department field to show like the original data
     const buildEmployeeData = () => {
         for (const val in details) {
             if (!details[val]) {

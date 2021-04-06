@@ -18,13 +18,13 @@ export default {
             meta: {
                 component: Boot
             },
-
+            // mock API call on startup to fetch data, Once data is fetched, change to home.
             invoke: {
                 src: "fetchData",
                 onDone: {
                     actions: [
                         assign({
-                            employees: (context, {data}) => {
+                            employees: (_, {data}) => {
                                 return data;
                             }
                         }),

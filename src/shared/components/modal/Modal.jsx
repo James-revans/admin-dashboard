@@ -5,6 +5,7 @@ import "./modal.scss";
 
 const Modal = ({components}) => {
     const [state, send] = useService(service);
+    // Here we do the same thing as in App.js. We loop through our components and render them according to the componentTree.
 
     return (
         <>

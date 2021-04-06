@@ -2,15 +2,12 @@
 
 .home {
     width: 100vw;
-    height: 80vh;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
     background-color: var(--light-2);
     border-radius: 15px;
     overflow-y: scroll;
-    height: 100vh;
 }
 
 @include media-breakpoint-up(md) {
@@ -18,5 +15,8 @@
         width: 100%;
         max-width: 80rem;
         height: 80vh;    
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
