@@ -1,6 +1,6 @@
 # Admin Dashboard
 
-Take-home project for fun. Demo here: https://admin-dashboard-8mbhb7ka1-jamesevans.vercel.app/
+Take-home project for fun. Demo here: https://admin-dashboard-git-master-jamesevans.vercel.app/
 
 ## Available Scripts
 
