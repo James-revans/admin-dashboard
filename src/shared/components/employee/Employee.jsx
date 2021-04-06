@@ -8,9 +8,6 @@ const Employee = ({info, index}) => {
     const [state, send] = useService(service);
     const {name, image, department, location} = info;
 
-    useEffect(() => {
-    }, [info])
-
     const openDetails = () => {
         send({
             type: "MODAL_UPDATE_EMPLOYEE_PREP", 
