@@ -52,6 +52,9 @@ To close the modal, all you need to do is send the `"MODAL_CLOSE"` event: https:
 </button>
 ```
 
+## Testing
+All testing so far has been manual with multiple browsers and devices. Test integrations with Jest would be the next step.
+
 ## Features to come
 Testing with Jest\
 Routing with url params setup for each modal popup\
